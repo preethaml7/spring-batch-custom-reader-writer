@@ -73,6 +73,7 @@ public class LoadDataStepConfig {
                 .reader(customFlatFileItemReader)
                 .processor(itemProcessor)
                 .writer(itemWriter())
+                .faultTolerant()
                 .listener(new ChunkCountListener())
                 .listener(new StepExecutionListener())
                 .listener(new LogStepExecutionListener())
